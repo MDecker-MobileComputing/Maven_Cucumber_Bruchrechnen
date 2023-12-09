@@ -2,7 +2,7 @@ package de.eldecker.dhbw.bruchrechnen;
 
 /**
  * Klasse für Bruchrechnen, die mit Cucumber unter Test genommen werden soll.
- * Die einzelnen Bruchoperationen (z.B. addieren) verändern den Wert des aufrunfenden Objekts
+ * Die einzelnen Bruchoperationen (z.B. {@link #addiere(Bruch)}) verändern den Wert des aufrufenden Objekts
  * (deshalb geben die Methoden alle {@code void} zurück).
  */
 public class Bruch {
@@ -106,6 +106,7 @@ public class Bruch {
 
     /**
      * Bruch kürzen.
+     * Beispiel: 2/4 wird zu 1/2
      */
     public void kuerzen() {
 
@@ -117,6 +118,7 @@ public class Bruch {
 
     /**
      * Berechnet den größten gemeinsamen Teiler von zwei Zahlen a und b mit dem Algorithmus von Euklid.
+     * 
      * @param a Zahl 1
      * @param b Zahl 2
      * @return den größten gemeinsamen Teiler von a und b
@@ -133,6 +135,17 @@ public class Bruch {
         return a;
     }
     
+
+    /**
+     * Gibt den Bruch als double zurück.
+     * 
+     * @return z.B. 0.5 für "1/2"
+     */
+    public double toDouble() {
+
+        return (double) _zaehler / _nenner;
+    }
+
 
     /**
      * Gibt den Bruch als String zurück.
@@ -177,6 +190,8 @@ public class Bruch {
 
     /**
      * Gibt den Hashcode des Bruchs zurück.
+     * 
+     * @return der Hashcode des Bruchs, z.B. 33 für "1/2"
      */
     @Override
     public int hashCode() {
