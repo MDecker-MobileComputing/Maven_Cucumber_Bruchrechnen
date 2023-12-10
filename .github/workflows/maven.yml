@@ -22,6 +22,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: KfzKennzeichenRestAPI_FatJar
-        path: target/bruchrechnen-*.jar
+        path: target/bruchrechnen-*-jar-with-dependencies.jar
         if-no-files-found: error # Default-Wert ist (nur) "warn"; es gibt auch noch "ignore"
 
