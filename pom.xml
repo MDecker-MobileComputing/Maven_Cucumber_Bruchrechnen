@@ -91,36 +91,35 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
             </plugin>
+            <plugin>
+                <!--
+                    "Fat Jar" bauen, wenn Befehl "mvn package" ausgeführt wird;
+                    das Programm hat zwar keine Abhängigkeiten, die in das jar "eingebacken"
+                    werden müssen, aber so wird das Main-Class-Attribute gesetzt.
+                -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                    <manifest>
+                        <mainClass>de.eldecker.dhbw.bruchrechnen.BruchDemo</mainClass>
+                    </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>assemble-all</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
-        <plugin>
-            <!--
-                 "Fat Jar" bauen, wenn Befehl "mvn package" ausgeführt wird;
-                  das Programm hat zwar keine Abhängigkeiten, die in das jar "eingebacken"
-                  werden müssen, aber so wird das Main-Class-Attribute gesetzt.
-              -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <version>3.6.0</version>
-            <configuration>
-                <descriptorRefs>
-                    <descriptorRef>jar-with-dependencies</descriptorRef>
-                </descriptorRefs>
-                <archive>
-                  <manifest>
-                    <mainClass>de.eldecker.dhbw.bruchrechnen.BruchDemo</mainClass>
-                  </manifest>
-                </archive>
-            </configuration>
-            <executions>
-                <execution>
-                    <id>assemble-all</id>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>single</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
-
     </build>
 </project>
