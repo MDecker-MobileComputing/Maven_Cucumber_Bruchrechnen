@@ -59,7 +59,7 @@ public class Bruch {
         _zaehler = _zaehler * inputBruch.getNenner() + inputBruch.getZaehler() * _nenner;
         _nenner  = _nenner  * inputBruch.getNenner();
 
-        kuerzen();
+        kuerze();
     }
 
 
@@ -68,12 +68,12 @@ public class Bruch {
      *
      * @param inputBruch Bruch, der vom aufrufenden Objekt abgezogen werden soll.
      */
-    public void subtrahieren(Bruch inputBruch) {
+    public void subtrahiere(Bruch inputBruch) {
 
         _zaehler = _zaehler * inputBruch.getNenner() - inputBruch.getZaehler() * _nenner;
         _nenner  = _nenner  * inputBruch.getNenner();
 
-        kuerzen();
+        kuerze();
     }
 
 
@@ -82,12 +82,12 @@ public class Bruch {
      *
      * @param inputBruch Bruch, mit dem der aufrufende Bruch multipliziert werden soll.
      */
-    public void multiplizieren(Bruch inputBruch) {
+    public void multipliziere(Bruch inputBruch) {
 
         _zaehler = _zaehler * inputBruch.getZaehler();
         _nenner  = _nenner  * inputBruch.getNenner();
 
-        kuerzen();
+        kuerze();
     }
 
     /**
@@ -95,19 +95,19 @@ public class Bruch {
      *
      * @param inputBruch Bruch, durch den der aufrufende Bruch dividiert werden soll.
      */
-    public void dividieren(Bruch inputBruch) {
+    public void dividiere(Bruch inputBruch) {
 
         _zaehler = _zaehler * inputBruch.getNenner();
         _nenner  = _nenner  * inputBruch.getZaehler();
 
-        kuerzen();
+        kuerze();
     }
 
 
     /**
      * Bruch-Objekt kürzen. Beispiel: 2/4 wird zu 1/2 gekürzt.
      */
-    public void kuerzen() {
+    public void kuerze() {
 
         int teiler = ggT(_zaehler, _nenner);
         _zaehler = _zaehler / teiler;

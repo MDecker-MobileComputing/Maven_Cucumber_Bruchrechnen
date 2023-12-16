@@ -23,7 +23,7 @@ public class BruchDemo {
 
             // multipliziere mit 2/3
             Bruch bruch3 = new Bruch(2, 3);
-            bruch1.multiplizieren(bruch3);
+            bruch1.multipliziere(bruch3);
             System.out.println(bruch1.getZaehler() + "/" + bruch1.getNenner());
 
             System.out.println("");
