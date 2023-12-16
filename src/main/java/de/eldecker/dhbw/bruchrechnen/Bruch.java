@@ -3,10 +3,10 @@ package de.eldecker.dhbw.bruchrechnen;
 /**
  * Klasse für Bruchrechnen, die mit Cucumber unter Test genommen werden soll.
  * Die einzelnen Bruchoperationen (z.B. {@link #addiere(Bruch)}) verändern den Wert des aufrufenden Objekts
- * (deshalb geben die Methoden alle {@code void} zurück).
+ * (deshalb geben die Berechnungsmethoden alle {@code void} zurück).
  */
 public class Bruch {
-    
+
     /** Zähler des Bruchs */
     private int _zaehler;
 
@@ -30,8 +30,8 @@ public class Bruch {
     /**
      * Gibt den Zähler des Bruchs zurück.
      *
-     * @return der Zähler des Bruchs
-     */ 
+     * @return Zähler des Bruchs
+     */
     public int getZaehler() {
 
         return _zaehler;
@@ -41,72 +41,71 @@ public class Bruch {
     /**
      * Gibt den Nenner des Bruchs zurück.
      *
-     * @return der Nenner des Bruchs (!= 0)
-     */     
+     * @return Nenner des Bruchs (!= 0)
+     */
     public int getNenner() {
 
-        return _nenner; 
-    }    
+        return _nenner;
+    }
 
 
     /**
-     * Addiert den gegebenen Bruch zu diesem Bruch.
+     * Addiert Argument {@code inputBruch} zum aufrufenden Bruch-Objekt.
      *
-     * @param inputBruch der Bruch, der zu diesem Bruch addiert werden soll
+     * @param inputBruch Bruch, der zum aufrufenden Bruch addiert werden soll
      */
     public void addiere(Bruch inputBruch) {
 
         _zaehler = _zaehler * inputBruch.getNenner() + inputBruch.getZaehler() * _nenner;
-        _nenner  = _nenner  * inputBruch.getNenner();    
+        _nenner  = _nenner  * inputBruch.getNenner();
 
         kuerzen();
     }
 
 
     /**
-     * Subtrahiert {@code inputBruch} von diesem Bruch.
-     * 
-     * @param inputBruch Bruch, der vom aufrunfenden Objekt abgezogen werden soll.
+     * Subtrahiert Argument {@code inputBruch} vom aufrufenden Bruch-Objekt.
+     *
+     * @param inputBruch Bruch, der vom aufrufenden Objekt abgezogen werden soll.
      */
     public void subtrahieren(Bruch inputBruch) {
 
         _zaehler = _zaehler * inputBruch.getNenner() - inputBruch.getZaehler() * _nenner;
-        _nenner  = _nenner  * inputBruch.getNenner();    
+        _nenner  = _nenner  * inputBruch.getNenner();
 
         kuerzen();
     }
 
 
     /**
-     * Multipliziert diesen Bruch mit dem gegebenen Bruch.
-     * 
+     * Multipliziert das aufrufende Bruch-Objekt mit Argument {@code inputBruch}.
+     *
      * @param inputBruch Bruch, mit dem der aufrufende Bruch multipliziert werden soll.
      */
     public void multiplizieren(Bruch inputBruch) {
 
         _zaehler = _zaehler * inputBruch.getZaehler();
-        _nenner  = _nenner  * inputBruch.getNenner();    
+        _nenner  = _nenner  * inputBruch.getNenner();
 
         kuerzen();
     }
 
     /**
-     * Dividiert diesen Bruch durch den gegebenen Bruch.
-     * 
+     * Dividiert das aufrufende Bruch-Objekt durch Argument {@code inputBruch}.
+     *
      * @param inputBruch Bruch, durch den der aufrufende Bruch dividiert werden soll.
      */
     public void dividieren(Bruch inputBruch) {
 
         _zaehler = _zaehler * inputBruch.getNenner();
-        _nenner  = _nenner  * inputBruch.getZaehler();    
+        _nenner  = _nenner  * inputBruch.getZaehler();
 
         kuerzen();
     }
 
 
     /**
-     * Bruch kürzen.
-     * Beispiel: 2/4 wird zu 1/2
+     * Bruch-Objekt kürzen. Beispiel: 2/4 wird zu 1/2 gekürzt.
      */
     public void kuerzen() {
 
@@ -117,13 +116,14 @@ public class Bruch {
 
 
     /**
-     * Berechnet den größten gemeinsamen Teiler von zwei Zahlen a und b mit dem Algorithmus von Euklid.
-     * 
-     * @param a Zahl 1
-     * @param b Zahl 2
-     * @return den größten gemeinsamen Teiler von a und b
+     * Berechnet den größten gemeinsamen Teiler von zwei Zahlen {@code a}
+     * und {@code b} mit dem Algorithmus von Euklid.
+     *
+     * @param a Erste Zahl
+     * @param b Zweite Zahl
+     * @return den größten gemeinsamen Teiler von {@code a} und {@code b}
      */
-    private int ggT(int a, int b) {
+    public static int ggT(int a, int b) {
 
         while (b != 0) {
 
@@ -134,11 +134,11 @@ public class Bruch {
 
         return a;
     }
-    
+
 
     /**
-     * Gibt den Bruch als double zurück.
-     * 
+     * Gibt den Bruch als {@code double} zurück.
+     *
      * @return z.B. 0.5 für "1/2"
      */
     public double toDouble() {
@@ -149,7 +149,7 @@ public class Bruch {
 
     /**
      * Gibt den Bruch als String zurück.
-     * 
+     *
      * @return der Bruch als String; Beispiel: "1/2"
      */
     @Override
@@ -160,10 +160,12 @@ public class Bruch {
 
 
     /**
-     * Vergleicht zwei Brüche auf Gleichheit.
-     * 
+     * Vergleicht zwei Brüche.
+     *
      * @param obj das Objekt, mit dem verglichen werden soll
-     * @return {@code true}, wenn die Brüche gleich sind, sonst {@code false}
+     * @return {@code true}, wenn die Brüche gleich sind, sonst {@code false};
+     *          zwei Bruch-Objekte sind gleich, wenn Zähler und Nenner denselben
+     *          Wert haben.
      */
     @Override
     public boolean equals(Object obj) {
@@ -171,7 +173,7 @@ public class Bruch {
         if (obj == this) {
 
             return true;
-        }   
+        }
         if (obj == null) {
 
             return false;
@@ -185,18 +187,19 @@ public class Bruch {
         Bruch other = (Bruch) obj;
 
         return _zaehler == other.getZaehler() && _nenner == other.getNenner();
-    }   
+    }
 
 
     /**
      * Gibt den Hashcode des Bruchs zurück.
-     * 
+     *
      * @return der Hashcode des Bruchs, z.B. 33 für "1/2"
      */
     @Override
     public int hashCode() {
 
-        return _zaehler * 31 + _nenner; // 31, weil Primzahl, in Buch "Effective Java" von Joshua Block empfohlen
-    }   
+        return _zaehler * 31 + _nenner;
+        // 31, weil Primzahl, in Buch "Effective Java" von Joshua Block empfohlen
+    }
 
 }
