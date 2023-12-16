@@ -21,7 +21,7 @@ jobs:
     - name: FatJar-Datei veröffentlichen
       uses: actions/upload-artifact@v3
       with:
-        name: KfzKennzeichenRestAPI_FatJar
+        name: Bruchrechnen_FatJar
         path: target/bruchrechnen-*-jar-with-dependencies.jar
         if-no-files-found: error # Default-Wert ist (nur) "warn"; es gibt auch noch "ignore"
 
