@@ -13,6 +13,15 @@ ist.
 Die Klasse `StepDefinitions` mit den zu implementierenden Step-Methoden findet sich im Ordner
 `src/test/java/de/eldecker/dhbw/cucumber/bruchrechnen/test/`.
 
+Diese Cucumber-Tests können in Eclipse wie Unit-Tests ausgeführt werden, oder auch mit dem
+Befehl `mvn test`.
+
+<br>
+
+Das Repo hat auche ein [Workflow-Datei](.github/workflows/maven.yml), in der das Maven-Projekt
+gebaut wird; die Ausführung der Tests wird dabei mit der Option `-DskipTests` überspringen,
+weil die Step-Methoden noch nicht implementiert sind und deshalb alle eine Exception werfen.
+
 <br>
 
 ----
