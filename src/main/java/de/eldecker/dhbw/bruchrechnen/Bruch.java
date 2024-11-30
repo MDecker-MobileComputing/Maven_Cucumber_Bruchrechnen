@@ -1,5 +1,6 @@
 package de.eldecker.dhbw.bruchrechnen;
 
+import java.util.Objects;
 
 /**
  * Klasse für Bruchrechnen, die mit Cucumber unter Test genommen werden soll.
@@ -180,27 +181,26 @@ public class Bruch {
             return false;
         }
 
-        if (! (obj instanceof Bruch)) {
+        if ( obj instanceof Bruch anderer) {
+
+            return _zaehler == anderer.getZaehler() && 
+                   _nenner == anderer.getNenner();            
+        } else {
 
             return false;
         }
-
-        Bruch other = (Bruch) obj;
-
-        return _zaehler == other.getZaehler() && _nenner == other.getNenner();
     }
 
 
     /**
-     * Gibt den Hashcode des Bruchs zurück.
+     * Gibt den Hashcode ("Fingerabdruck") des Bruchs zurück.
      *
-     * @return der Hashcode des Bruchs, z.B. 33 für "1/2"
+     * @return Hashcode des Bruchs
      */
     @Override
     public int hashCode() {
 
-        return _zaehler * 31 + _nenner;
-        // 31, weil Primzahl, in Buch "Effective Java" von Joshua Block empfohlen
+        return Objects.hash( _zaehler , _nenner );
     }
 
 }
