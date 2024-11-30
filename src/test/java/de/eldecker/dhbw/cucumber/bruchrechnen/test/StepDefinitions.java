@@ -21,11 +21,13 @@ public class StepDefinitions {
         throw new PendingException();
     }
     
+    
     @When("ich addiere einen anderen Bruch mit Zähler <{int}> und Nenner <{int}>")
     public void whenIchAddiereEinenBruch(Integer zaehler, Integer nenner) {
 
         throw new PendingException();
     }
+    
     
     @When("ich einen anderen Bruch mit Zähler <{int}> und Nenner <{int}> multipliziere")
     public void whenIchMultipliziereEinenBruch(Integer zaehler, Integer nenner) {
