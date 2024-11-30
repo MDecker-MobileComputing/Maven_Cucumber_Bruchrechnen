@@ -18,9 +18,9 @@ Befehl `mvn test`.
 
 <br>
 
-Das Repo hat auche ein [Workflow-Datei](.github/workflows/maven.yml), in der die FatJar-Datei
+Das Repo hat auch eine [Workflow-Datei](.github/workflows/maven.yml), in der die FatJar-Datei
 für das Maven-Projekt gebaut wird; die Ausführung der Tests wird dabei mit der Option
-`-DskipTests` überspringen, weil die Step-Methoden noch nicht implementiert sind und deshalb
+`-DskipTests` übersprungen, weil die Step-Methoden noch nicht implementiert sind und deshalb
 alle eine Exception werfen.
 
 <br>
