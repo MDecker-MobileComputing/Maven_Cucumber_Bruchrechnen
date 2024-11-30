@@ -12,7 +12,7 @@
     <packaging>jar</packaging>
 
 	<url>https://github.com/MDecker-MobileComputing/Maven_Cucumber_Bruchrechnen</url>
-	<name>Bruchrechnen</name>
+	<name>Bruchrechnen-Cucumber</name>
 	<inceptionYear>2023</inceptionYear>
 	<description>Bruchrechnen als Beispiel für BDD mit Cucumber</description>
 	<licenses>
