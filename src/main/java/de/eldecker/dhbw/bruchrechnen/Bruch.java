@@ -1,5 +1,6 @@
 package de.eldecker.dhbw.bruchrechnen;
 
+
 /**
  * Klasse für Bruchrechnen, die mit Cucumber unter Test genommen werden soll.
  * Die einzelnen Bruchoperationen (z.B. {@link #addiere(Bruch)}) verändern den Wert des aufrufenden Objekts
