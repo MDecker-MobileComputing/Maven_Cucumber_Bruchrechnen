@@ -122,7 +122,9 @@ public class Bruch {
      * und {@code b} mit dem Algorithmus von Euklid.
      *
      * @param a Erste Zahl
+     * 
      * @param b Zweite Zahl
+     * 
      * @return den größten gemeinsamen Teiler von {@code a} und {@code b}
      */
     public static int ggT(int a, int b) {
