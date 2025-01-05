@@ -4,7 +4,7 @@
 
 clear
 
-./mvnw clean javadoc:javadoc -Dshop=private -DadditionalJOption=-Xdoclint:none
+./mvnw clean javadoc:javadoc -Dshow=private -DadditionalJOption=-Xdoclint:none
 
 echo
 
