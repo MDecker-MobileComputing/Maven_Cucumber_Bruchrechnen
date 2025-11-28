@@ -22,7 +22,7 @@ public class Bruch {
      * @param inputZaehler der Zähler des Bruchs
      * @param inputNenner der Nenner des Bruchs; darf nicht 0 sein.
      */
-    public Bruch(int inputZaehler, int inputNenner) {
+    public Bruch( int inputZaehler, int inputNenner ) {
 
         _zaehler = inputZaehler;
         _nenner  = inputNenner;
@@ -56,7 +56,7 @@ public class Bruch {
      *
      * @param inputBruch Bruch, der zum aufrufenden Bruch addiert werden soll
      */
-    public void addiere(Bruch inputBruch) {
+    public void addiere( Bruch inputBruch ) {
 
         _zaehler = _zaehler * inputBruch.getNenner() + inputBruch.getZaehler() * _nenner;
         _nenner  = _nenner  * inputBruch.getNenner();
@@ -70,7 +70,7 @@ public class Bruch {
      *
      * @param inputBruch Bruch, der vom aufrufenden Objekt abgezogen werden soll.
      */
-    public void subtrahiere(Bruch inputBruch) {
+    public void subtrahiere( Bruch inputBruch ) {
 
         _zaehler = _zaehler * inputBruch.getNenner() - inputBruch.getZaehler() * _nenner;
         _nenner  = _nenner  * inputBruch.getNenner();
@@ -84,7 +84,7 @@ public class Bruch {
      *
      * @param inputBruch Bruch, mit dem der aufrufende Bruch multipliziert werden soll.
      */
-    public void multipliziere(Bruch inputBruch) {
+    public void multipliziere( Bruch inputBruch ) {
 
         _zaehler = _zaehler * inputBruch.getZaehler();
         _nenner  = _nenner  * inputBruch.getNenner();
@@ -97,7 +97,7 @@ public class Bruch {
      *
      * @param inputBruch Bruch, durch den der aufrufende Bruch dividiert werden soll.
      */
-    public void dividiere(Bruch inputBruch) {
+    public void dividiere( Bruch inputBruch ) {
 
         _zaehler = _zaehler * inputBruch.getNenner();
         _nenner  = _nenner  * inputBruch.getZaehler();
@@ -111,7 +111,7 @@ public class Bruch {
      */
     public void kuerze() {
 
-        int teiler = ggT(_zaehler, _nenner);
+        int teiler = ggT( _zaehler, _nenner );
         _zaehler = _zaehler / teiler;
         _nenner  = _nenner  / teiler;
     }
@@ -127,9 +127,9 @@ public class Bruch {
      * 
      * @return den größten gemeinsamen Teiler von {@code a} und {@code b}
      */
-    public static int ggT(int a, int b) {
+    public static int ggT( int a, int b ) {
 
-        while (b != 0) {
+        while ( b != 0 ) {
 
             int temp = b;
             b = a % b;
@@ -172,13 +172,13 @@ public class Bruch {
      *          Wert haben.
      */
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals( Object obj ) {
 
-        if (obj == this) {
+        if ( obj == this ) {
 
             return true;
         }
-        if (obj == null) {
+        if ( obj == null ) {
 
             return false;
         }
