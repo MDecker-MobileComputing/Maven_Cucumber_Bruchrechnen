@@ -10,10 +10,10 @@ jobs:
     steps:
     - name: Git-Repo auschecken
       uses: actions/checkout@v4
-    - name: JDK 23 einrichten
+    - name: JDK einrichten
       uses: actions/setup-java@v4
       with:
-        java-version: '23'
+        java-version: '25'
         distribution: 'temurin'
         cache: maven
     - name: FatJar-Datei mit Maven bauen
