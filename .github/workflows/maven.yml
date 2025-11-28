@@ -22,6 +22,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Bruchrechnen_FatJar
-        path: target/bruchrechnen-*-jar-with-dependencies.jar
+        path: target/bruchrechnen-*-SNAPSHOT.jar
         if-no-files-found: error # Default-Wert ist (nur) "warn"; es gibt auch noch "ignore"
         retention-days: 3
